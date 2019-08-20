@@ -59,7 +59,7 @@ html::before {
 
 
 .events ul {
-    margin: 1.5em 0 1.5em 3em;
+    margin: 1.5em 0 1.5em 1em;
     list-style-type: none;
     /* border-left: 3px solid #1EA9E2; */
 }
@@ -73,7 +73,7 @@ html::before {
     display: inline-block;
     padding-right: 20px;
     /* background-color: #ddd; */
-    width: 50px;
+    width: 70px;
     position: relative;
     margin-right: 4px;
     font-size: 12px;

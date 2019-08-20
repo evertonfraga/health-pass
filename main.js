@@ -39,8 +39,19 @@ var User = {
 }
 
 
+function getBeneficiaryAddress() {
+	// first, look at the query string
+	// ?address=0x…
+	var match = window.location.search.match(/address=(0x[a-f0-9]{40})/i)
+	if (match) {
+		return match[1].toLowerCase()
+	}
 
-var BENEFICIARY = '0xB8ec0DAe7e2D860c3c94Fe0841d3a27a3255A16c'.toLowerCase();
+	// Fallback is William
+	return '0xB8ec0DAe7e2D860c3c94Fe0841d3a27a3255A16c'.toLowerCase();
+}
+
+var BENEFICIARY = getBeneficiaryAddress();
 
 // Published in Rinkeby
 var credentialDirectoryAddress = '0xdd960fd678b96f303c51cf6f7bac53896f58ff37';
