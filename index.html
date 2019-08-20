@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Health Pass</title>
+      <meta name="viewport" content="initial-scale=1.0">
+      <meta charset="utf-8">
+        <link rel="stylesheet" href="main.css">
+      <link href="https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap" rel="stylesheet">
+
+  </head>
+
+  <body>
+    
+    <div class="app">
+        <div class="avatar-container">
+            <img src="" alt="" class="avatar" data-bind="picture">
+            <!-- <img src="https://i.ibb.co/LRL2hCP/will.png" alt="" class="avatar" data-bind="picture"> -->
+            <img src="https://www.countryflags.io/JP/flat/48.png" alt="" class="country-flag" data-bind="country-flag">
+            <!-- <img src="https://www.countryflags.io/MW/flat/48.png" alt="" class="country-flag"> -->
+        </div>
+        <!-- <h1 data-bind="name">William Kamkwanda</h1> -->
+        <h1 data-bind="name">…</h1>
+    </div>
+    
+    <section class="events">
+      <ul data-bind="events" data-template="<li><time>%time%</time><span>%name%</span></li>">
+        <!-- <li>
+          <time>2d</time>
+          <span>Varicella vaccine</span>
+        </li>
+        <li>
+          <time>70d</time>
+          <span>DTaP vaccine</span>
+        </li>
+        <li>
+          <time>181d</time>
+          <span>HepA vaccine</span>
+        </li>
+        <li>
+          <time>280d</time>
+          <span>HepB vaccine</span>
+        </li>
+        <li>
+          <time>1y</time>
+          <span>Hib vaccine</span>
+        </li>
+        <li>
+          <time>1y</time>
+          <span>HPV vaccine</span>
+        </li>
+        <li>
+          <time>2y</time>
+          <span>Influenza vaccine</span>
+        </li>
+        <li>
+          <time>3y</time>
+          <span>MMR vaccine</span>
+        </li> -->
+      </ul>
+    </section>
+
+    <section class="map">
+        <div id="map"></div>
+    </section>
+
+    <footer></footer>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpFtJEYLy1dfc20iVM8R783j20GYdXanI&callback=initMap"
+    async defer></script>
+    <script src="web3.min.js"></script>
+    <script src="abi.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
