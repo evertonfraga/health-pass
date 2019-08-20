@@ -68,15 +68,17 @@
       var map;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 8
+          center: {lat: 0, lng: 0},
+          zoom: 2
         });
+        markers = [];
       }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpFtJEYLy1dfc20iVM8R783j20GYdXanI&callback=initMap"
     async defer></script>
     <script src="web3.min.js"></script>
     <script src="abi.js"></script>
+    <script src="maps.js"></script>
     <script src="main.js"></script>
   </body>
 </html>

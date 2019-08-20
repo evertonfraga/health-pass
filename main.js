@@ -10,7 +10,10 @@ var User = {
 		var list = EL('events');
 		var template = list.getAttribute('data-template');
 
-		var subs = { name: l.name, time: l.date };
+		var subs = {
+			name: l.name,
+			time: (new Date(l.date * 1000).toISOString().substr(0, 10))
+		};
 
 		for(var key in subs) {
 			if(!subs.hasOwnProperty(key)) continue;
@@ -20,8 +23,19 @@ var User = {
 
 		list.innerHTML += template;
 	},
-	
-	setMapPins: l => {}
+
+	setMapPins: (l, map) => {
+		var myLatLng = {lat: l.lat, lng: l.lon};
+		var marker = new google.maps.Marker({
+		  position: myLatLng,
+		  title: l.name
+		});
+
+		marker.setMap(map);
+		markers.push(marker);
+
+		centerAndZoom(map, markers)
+	}
 }
 
 
@@ -75,14 +89,14 @@ function setupContract () {
 
 		var controllerAddress = event.args._controller.toLowerCase();
 		if (controllerAddress !== BENEFICIARY) return;
-		User.setLifeEvent({
+		var eventObject = {
 			name: event.args._eventName,
 			date: event.args._timestamp,
-			lat: event.args.lat.s * event.args.lat[0],
-			lon: event.args.lon.s * event.args.lon[0]
-
-		})
-
+			lat: event.args.lat.s * event.args.lat.c[0] / 1e6,
+			lon: event.args.lon.s * event.args.lon.c[0] / 1e6
+		};
+		User.setLifeEvent(eventObject);
+		User.setMapPins(eventObject, window.map);
 	});
 }
 
