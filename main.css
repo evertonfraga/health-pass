@@ -21,40 +21,40 @@ section {
 }
 
 .avatar-container {
-height: 200px;
-width: 200px;
-margin: 0 auto;
-position: relative;
+    height: 200px;
+    width: 200px;
+    margin: 0 auto;
+    position: relative;
 }
 .avatar {
-border-radius: 50%;
-height: 200px;
-width: 200px;
-display: block;
-border: 3px solid white;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    display: block;
+    border: 3px solid white;
 }
 .country-flag {
-position: absolute;
-bottom: 0;
-right: 8px;
+    position: absolute;
+    bottom: 0;
+    right: 8px;
 }
 
 .name {
-font-size: 1.6rem;
-display: block;
-text-align: center;
-margin: .75em;
+    font-size: 1.6rem;
+    display: block;
+    text-align: center;
+    margin: .75em;
 }
 
 html::before {
-content: '';
-width: 100%;
-min-height: 20vh;
-height: 240px;
-background-color: #1EA9E2;
-display: block;
-position: absolute;
-z-index: 0;
+    content: '';
+    width: 100%;
+    min-height: 20vh;
+    height: 240px;
+    background-color: #1EA9E2;
+    display: block;
+    position: absolute;
+    z-index: 0;
 }
 
 
